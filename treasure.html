@@ -4,68 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gowtham Alasakani Digs for Treasure</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            text-align: center;
-            background-color: #f4f4f4;
-            font-family: Arial, sans-serif;
-        }
-        .game-container {
-            margin: 20px auto;
-            width: 80%;
-        }
-        .grid-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 20px;
-        }
-        .row {
-            display: flex;
-            justify-content: center;
-            gap: 5px;
-        }
-        .cell {
-            width: 80px;
-            height: 80px;
-            background-color: #ddd;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border: 2px solid #999;
-            cursor: pointer;
-        }
-        .cell img {
-            width: 70px;
-            height: 70px;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css"> <!-- External CSS -->
 </head>
 <body>
+    <h1>Gowtham Alasakani Digs for Treasure</h1>
+    
+    <p>Click on the locations to find silver and gold, watch out for the rattlesnake.</p>
+    <p id="locations">Number of locations checked is zero.</p>
+    <p id="score">Score is zero.</p>
+    <p>Click for help.</p>
+    <p id="help">Help report</p>
 
-    <header class="my-4">
-        <h1>Gowtham Alasakani Digs for Treasure</h1>
-    </header>
-
-    <div class="game-container">
-        <p>Click on the locations to find silver and gold, watch out for the rattlesnake!</p>
-        <p id="locations">Number of locations checked is zero.</p>
-        <p id="score">Score is zero.</p>
-        <p>Click for help.</p>
-        <p id="help">Help report</p>
-
-        <div class="grid-container">
-            <!-- 5 Rows with 7 Cells Each -->
-            <script>
-                for (let i = 0; i < 5; i++) {
-                    document.write('<div class="row">');
-                    for (let j = 0; j < 7; j++) {
-                        document.write('<div class="cell"><img src="images/cactus.png" alt="Cactus"></div>');
-                    }
-                    document.write('</div>');
-                }
-            </script>
+    <!-- Game Field (5x7 Grid) -->
+    <div class="game-grid">
+        <!-- 5 rows -->
+        <div class="row">
+            <div class="location"><img src="images/cactus.png" alt="Cactus"></div>
+            <div class="location"><img src="images/cactus.png" alt="Cactus"></div>
+            <div class="location"><img src="images/cactus.png" alt="Cactus"></div>
+            <div class="location"><img src="images/cactus.png" alt="Cactus"></div>
+            <div class="location"><img src="images/cactus.png" alt="Cactus"></div>
+            <div class="location"><img src="images/cactus.png" alt="Cactus"></div>
+            <div class="location"><img src="images/cactus.png" alt="Cactus"></div>
+        </div>
+        <div class="row">
+            <div class="location"><img src="images/cactus.png" alt="Cactus"></div>
+            <div class="location"><img src="images/cactus.png" alt="Cactus"></div>
+            <div class="location"><img src="images/cactus.png" alt="Cactus"></div>
+            <div class="location"><img src="images/cactus.png" alt="Cactus"></div>
+            <div class="location"><img src="images/cactus.png" alt="Cactus"></div>
+            <div class="location"><img src="images/cactus.png" alt="Cactus"></div>
+            <div class="location"><img src="images/cactus.png" alt="Cactus"></div>
+        </div>
+        <div class="row">
+            <div class="location"><img src="images/cactus.png" alt="Cactus"></div>
+            <div class="location"><img src="images/cactus.png" alt="Cactus"></div>
+            <div class="location"><img src="images/cactus.png" alt="Cactus"></div>
+            <div class="location"><img src="images/cactus.png" alt="Cactus"></div>
+            <div class="location"><img src="images/cactus.png" alt="Cactus"></div>
+            <div class="location"><img src="images/cactus.png" alt="Cactus"></div>
+            <div class="location"><img src="images/cactus.png" alt="Cactus"></div>
+        </div>
+        <div class="row">
+            <div class="location"><img src="images/cactus.png" alt="Cactus"></div>
+            <div class="location"><img src="images/cactus.png" alt="Cactus"></div>
+            <div class="location"><img src="images/cactus.png" alt="Cactus"></div>
+            <div class="location"><img src="images/cactus.png" alt="Cactus"></div>
+            <div class="location"><img src="images/cactus.png" alt="Cactus"></div>
+            <div class="location"><img src="images/cactus.png" alt="Cactus"></div>
+            <div class="location"><img src="images/cactus.png" alt="Cactus"></div>
+        </div>
+        <div class="row">
+            <div class="location"><img src="images/cactus.png" alt="Cactus"></div>
+            <div class="location"><img src="images/cactus.png" alt="Cactus"></div>
+            <div class="location"><img src="images/cactus.png" alt="Cactus"></div>
+            <div class="location"><img src="images/cactus.png" alt="Cactus"></div>
+            <div class="location"><img src="images/cactus.png" alt="Cactus"></div>
+            <div class="location"><img src="images/cactus.png" alt="Cactus"></div>
+            <div class="location"><img src="images/cactus.png" alt="Cactus"></div>
         </div>
     </div>
 
