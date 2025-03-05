@@ -6,10 +6,12 @@ function recordTime() {
 }
 
 function beginTime() {
-    for (let i = 0; i <= 5; i++) {
+    let countdownStart = Math.floor(Math.random() * 9) + 2;  // Random number between 2 and 10
+
+    for (let i = 0; i <= countdownStart; i++) {
         setTimeout(() => {
-            document.getElementById("counter").innerHTML = `Count: ${5 - i}`;
-        }, (5 - i) * 1000);
+            document.getElementById("counter").innerHTML = `Count: ${countdownStart - i}`;
+        }, (countdownStart - i) * 1000);
     }
 
     setTimeout(() => {
@@ -20,5 +22,5 @@ function beginTime() {
             let elapsedTime = targetTime - haltTime;
             document.getElementById("target").innerHTML = `Time was ${elapsedTime} ms`;
         }
-    }, 5000);
+    }, countdownStart * 1000);
 }

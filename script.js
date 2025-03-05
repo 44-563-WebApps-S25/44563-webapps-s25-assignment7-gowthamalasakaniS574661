@@ -1,11 +1,40 @@
+function getRandomPosition(exclude = []) {
+    let position;
+    do {
+        position = Math.floor(Math.random() * 35);
+    } while (exclude.includes(position)); 
+    return position;
+}
+
+// Assign random locations for snake, silver, and gold
+let goldLocation = getRandomPosition();
+let snakeLocation = getRandomPosition([goldLocation]);
+let silverLocations = [
+    getRandomPosition([goldLocation, snakeLocation]),
+    getRandomPosition([goldLocation, snakeLocation]),
+    getRandomPosition([goldLocation, snakeLocation]),
+    getRandomPosition([goldLocation, snakeLocation]),
+    getRandomPosition([goldLocation, snakeLocation])
+];
+
 const ids = Array.from({ length: 35 }, (_, i) => `img${i}`);
 let score = 0;
 let locationsVisited = 0;
 let lastLocation = 0;
-const silverLocations = [2, 5, 11, 21, 32];
-const goldLocation = 15;
-const snakeLocation = 20;
 let gameOver = false;
+
+function moveSnake() {
+    let row = Math.floor(snakeLocation / 7);
+    let col = snakeLocation % 7;
+    row = (row + 1) % 5; 
+    col = (col + 1) % 7;
+    snakeLocation = row * 7 + col;
+
+    if (snakeLocation === lastLocation) {
+        gameOver = true;
+        document.getElementById("help").innerText = "Snake got you!";
+    }
+}
 
 function check(position) {
     if (gameOver) return;
@@ -30,6 +59,7 @@ function check(position) {
 
     locationsVisited++;
     lastLocation = position;
+    moveSnake();
 
     document.getElementById("locations").innerText = `Number of locations checked is ${locationsVisited}.`;
     document.getElementById("score").innerText = `Score is ${score}.`;

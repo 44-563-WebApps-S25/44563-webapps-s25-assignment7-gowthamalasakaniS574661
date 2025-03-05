@@ -32,3 +32,17 @@ function removeMiddle() {
         divListItems[middleIndex].remove();
     }
 }
+
+function promote() {
+    let divListItems = document.getElementsByClassName("divlist");
+    let length = divListItems.length;
+
+    if (length > 1) {
+        let randomIndex = Math.floor(Math.random() * length);
+        let container = document.getElementById("listContainer");
+
+        if (randomIndex > 0) {
+            container.insertBefore(divListItems[randomIndex], divListItems[randomIndex - 1]);
+        }
+    }
+}
